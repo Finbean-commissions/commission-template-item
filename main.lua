@@ -2,7 +2,6 @@
 --Startup
 local mod = RegisterMod("Commission Template - Items (Passive, Active, Trinket and Card)", 1)
 local game = Game()
-local rng = RNG()
 
 mod.Items = {
     Passive = Isaac.GetItemIdByName("Passive Example"),
