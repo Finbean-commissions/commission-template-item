@@ -55,3 +55,5 @@ function mod:CacheEvaluation(player, cacheFlag)
 	end
 end
 mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,mod.CacheEvaluation)
+
+include("item-descriptions.lua")
