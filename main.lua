@@ -19,10 +19,22 @@ function mod:UseItem(item, _, player, UseFlags, Slot, _)
 		if item == mod.Items.Active then
             player:AnimateCollectible(mod.Items.Active, "UseItem")
             game:Fart(player.Position, 85, nil, 1, 0, Color.Default)
+            for i = 1,2 do
+                Isaac.Spawn(5, 300, mod.Items.Card, player.Position, Vector(0,-48), nil)
+            end
         end
     end
 end
 mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.UseItem)
+
+function mod:UseCard(card, player)
+    if card == mod.Items.Card then
+        for i = 1,8 do
+            Isaac.Spawn(5, 10, 0, player.Position, Vector(0,8), nil)
+        end
+    end
+end
+mod:AddCallback(ModCallbacks.MC_USE_CARD,mod.UseCard)
 
 local function toTears(fireDelay) --thanks oat for the cool functions for calculating firerate
 	return 30 / (fireDelay + 1)
@@ -31,9 +43,9 @@ local function fromTears(tears)
 	return math.max((30 / tears) - 1, -0.99)
 end
 function mod:CacheEvaluation(player, cacheFlag)
-	if player:HasCollectible(mod.item.Passive) == true then
+	if player:HasCollectible(mod.Items.Passive) == true then
 		if cacheFlag == CacheFlag.CACHE_FIREDELAY then
-			player.MaxFireDelay = math.max(1.0, fromTears(toTears(player.MaxFireDelay) + 1.22 * player:GetCollectibleNum(mod.item.Passive, true)))
+			player.MaxFireDelay = math.max(1.0, fromTears(toTears(player.MaxFireDelay) + 1.22 * player:GetCollectibleNum(mod.Items.Passive, true)))
 		end
 	end
 end
