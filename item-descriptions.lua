@@ -21,7 +21,7 @@ if EID then
 	EID:addCollectible(mod.item.Passive, mod.description.Passive)
 	EID:addCollectible(mod.item.Active, mod.description.Active)
 	EID:addTrinket(mod.item.Trinket, mod.description.Trinket)
-	EID:addCCard(mod.item.Card, mod.description.Card)
+	EID:addCard(mod.item.Card, mod.description.Card)
 end
 
 --Encyclopedia documentation found here: https://github.com/AgentCucco/encyclopedia-docs/wiki.
@@ -58,8 +58,8 @@ if Encyclopedia then
 		ID = mod.item.Passive,
 		WikiDesc = Wiki.Passive,
 		Pools = {
-			Encyclopedia.ItemPools.POOL_TREASURE,
-			Encyclopedia.ItemPools.POOL_GREED_TREASURE,
+			Encyclopedia.ItemPools.POOL_BOSS,
+			Encyclopedia.ItemPools.POOL_GREED_BOSS,
 		},
 	})
 	Encyclopedia.AddItem({
