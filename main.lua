@@ -47,10 +47,10 @@ function mod:CacheEvaluation(player, cacheFlag)
 	end
 	if player:HasTrinket(mod.Items.Trinket) == true then
 		if cacheFlag == CacheFlag.CACHE_SPEED then
-			player.MoveSpeed = player.MoveSpeed - 0.2 * player:GetTrinketMultiplier(mod.Items.Passive)
+			player.MoveSpeed = player.MoveSpeed - 0.2 * player:GetTrinketMultiplier(mod.Items.Trinket)
 		end
 		if cacheFlag == CacheFlag.CACHE_DAMAGE then
-			player.Damage = player.Damage + 2 * player:GetTrinketMultiplier(mod.Items.Passive)
+			player.Damage = player.Damage + 2 * player:GetTrinketMultiplier(mod.Items.Trinket)
 		end
 	end
 end
